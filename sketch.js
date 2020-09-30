@@ -1,6 +1,7 @@
 // food I love
 
 let food = [{
+  name: "sushi",
   kind: "sashimi"
 }, {
   name: "friedchicken",
