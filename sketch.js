@@ -4,8 +4,8 @@ let food = [{
   name: "sushi",
   kind: "sashimi"
 }, {
-  name: "friedchicken",
-  kind: "popeyes"
+  name: "popeyes",
+  kind: "fried chicken"
 }, {
   name: "noodles",
   kind: "pasta"
@@ -15,11 +15,14 @@ let food = [{
 }];
 
 let randomIndex;
-
+let animating = false;
 
 function setup() {
   createCanvas (600,600);
   background (200);
+  textSize(32);
+
+  text("click to randomize", 50, 50);
 
   mic = new p5.AudioIn()
   mic.start();
@@ -27,14 +30,33 @@ function setup() {
 
 }
 
+
 function draw () {
 
+  if(animating == true){
+    ellipse(random(width),random(height), random(50, 200));
+  }
+}
 
+function randomizer(){
+  animating = false;
+  if (food[0]) {
+    //this displays random food
+    background(random(200, 255));
+    randomIndex = int(random(food.length));
+    text(`${food[randomIndex].name}'s best dish is
+    ${food[randomIndex].kind}`, 50, 50);
+    // text(food[randomIndex].name + "'s best dish is " +
+    // food[randomIndex].kind, 50, 50);
+    food.splice(randomIndex, 1);
+  } else{
+    background(random(200, 255));
+    text("nothing left!", 50, 50);
+  }
 }
 
 function mousePressed() {
-  background(random(200, 255));
-  randomIndex = int(random(food.length));
-  text(food[randomIndex].name, 50,50);
-  food.splice(randomIndex, 1);
+  animating = true;
+  setTimeout(randomizer, 2000);
+
 }
