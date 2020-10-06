@@ -22,7 +22,7 @@ let buttonPressed;
 
 function preload(){
   for (let i = 0; i <= 19; i++){
-    trump[i] = loadImage(`assets/trump_${i}.PNG`)
+    trump[i] = loadImage(`assets/trump_${i}.png`)
   }
 }
 
