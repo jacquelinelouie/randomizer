@@ -18,7 +18,7 @@ let randomIndex;
 let animating = false;
 let trump = [];
 let imageCounter = 0;
-let button;
+let buttonPressed;
 
 function preload(){
   for (let i = 0; i <= 19; i++){
