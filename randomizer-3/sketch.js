@@ -18,6 +18,7 @@ let randomIndex;
 let animating = false;
 let trump = [];
 let imageCounter = 0;
+let button;
 
 function preload(){
   for (let i = 0; i <= 19; i++){
@@ -33,7 +34,8 @@ function setup() {
   frameRate(12);
 
   text("click to randomize", 50, 50);
-  console.log(trump);
+  button = createButton("click to randomize");
+  button.mousePressed(buttonPressed);
 
   mic = new p5.AudioIn()
   mic.start();
@@ -74,7 +76,7 @@ function randomizer(){
   }
 }
 
-function mousePressed() {
+function buttonPressed() {
   animating = true;
   setTimeout(randomizer, 2000);
   }
