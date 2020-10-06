@@ -17,11 +17,11 @@ let food = [{
 let randomIndex;
 let animating = false;
 let trump = [];
+let imageCounter = 0;
 
 function preload(){
-
   for (let i = 0; i <= 19; i++){
-    trump[i] = loadImage(`assets/trump_${i}.png`)
+    trump[i] = loadImage(`assets/trump_${i}.PNG`)
   }
 }
 
@@ -29,6 +29,8 @@ function setup() {
   createCanvas (600,600);
   background (200);
   textSize(32);
+  imageMode(CENTER);
+  frameRate(12);
 
   text("click to randomize", 50, 50);
   console.log(trump);
@@ -39,24 +41,30 @@ function setup() {
 
 }
 
-
 function draw () {
 
-  background(bg);
-
   if(animating == true){
-    image(trump[0], 0, 0);
+    clear();
+    image(trump[imageCounter], width / 2, height / 2)
+
+  if (imageCounter < trump.length - 1){
+    imageCounter++;
+  } else {
+    imageCounter = 0;
   }
 }
+
 
 function randomizer(){
   animating = false;
   if (food[0]) {
     //this displays random food
-    background(random(200, 255));
+    // background(random(200, 255));
+    clear();
     randomIndex = int(random(food.length));
     text(`${food[randomIndex].name}'s best dish is
     ${food[randomIndex].kind}`, 50, 50);
+    image(random(trump), width / 2, height / 2);
     // text(food[randomIndex].name + "'s best dish is " +
     // food[randomIndex].kind, 50, 50);
     food.splice(randomIndex, 1);
@@ -69,5 +77,5 @@ function randomizer(){
 function mousePressed() {
   animating = true;
   setTimeout(randomizer, 2000);
-
+  }
 }
