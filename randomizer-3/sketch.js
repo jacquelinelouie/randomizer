@@ -22,7 +22,7 @@ let button;
 
 function preload(){
   for (let i = 0; i <= 19; i++){
-    trump[i] = loadImage(`assets/trump_${i}.png`)
+    trump[i] = loadImage(`assets/trump_${i}.PNG`)
   }
 }
 
@@ -55,7 +55,6 @@ function draw () {
     imageCounter = 0;
   }
 }
-
 
 function randomizer(){
   animating = false;
