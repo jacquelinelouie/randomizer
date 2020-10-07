@@ -18,7 +18,7 @@ function setup() {
   frameRate(12);
 
   text("click to randomize", 50, 50);
-  button = createButton("click to randomize");
+  button = createButton("show me a tweet");
   button.mousePressed(buttonPressed);
 
 }
