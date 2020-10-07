@@ -6,7 +6,7 @@ let button;
 
 function preload(){
   for (let i = 0; i <= 19; i++){
-    trump[i] = loadImage(`assets/trump_${i}.png`)
+    trump[i] = loadImage(`assets/trump_${i}.PNG`)
   }
 }
 
@@ -17,10 +17,10 @@ function setup() {
   imageMode(CENTER);
   frameRate(12);
 
-  text("click to randomize", 50, 50);
+  text("click to randomize", 160, 300);
   button = createButton("show me a tweet");
   button.mousePressed(buttonPressed);
-
+  button.class("randomizerButton");
 }
 
 function draw () {
