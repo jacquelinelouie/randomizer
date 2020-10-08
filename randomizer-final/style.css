@@ -1,10 +1,16 @@
 html{
   text-align: center;
+  background: url(assets/whitehouse_bg.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
   margin: auto;
   display:block;
+
 }
 
 canvas {
@@ -15,16 +21,27 @@ canvas {
     margin-right: auto;
     display: block;
     width: 800px;
-
 }
 
 h1 {
   font-size: 24px;
   font-family: sans-serif;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .randomizerButton {
   padding: 20px;
   background-color: #ff8400;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: inset 0px -4px 0px rgba(255,255,255,.3);
+}
+
+.randomizerButton:hover {
+  background-color: #ffc987;
+  color: white;
 }
